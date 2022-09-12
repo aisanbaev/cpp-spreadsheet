@@ -22,8 +22,8 @@ public:
         }
 
     Value Evaluate(const SheetInterface& sheet) const override {
-        // Определяем объект-функцию, которая по индексу ячейки
-        // возвращает её значение в конкретной таблице
+        // РћРїСЂРµРґРµР»СЏРµРј РѕР±СЉРµРєС‚-С„СѓРЅРєС†РёСЋ, РєРѕС‚РѕСЂР°СЏ РїРѕ РёРЅРґРµРєСЃСѓ СЏС‡РµР№РєРё
+        // РІРѕР·РІСЂР°С‰Р°РµС‚ РµС‘ Р·РЅР°С‡РµРЅРёРµ РІ РєРѕРЅРєСЂРµС‚РЅРѕР№ С‚Р°Р±Р»РёС†Рµ
         const std::function<double(Position)> args = [&sheet](const Position pos)->double {
             if (!pos.IsValid()) {
                 throw FormulaError(FormulaError::Category::Ref);
